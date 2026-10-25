@@ -604,7 +604,7 @@ Func _apply($dhcp, $ip, $subnet, $gateway, $dnsDhcp, $dnsp, $dnsa, $dnsreg, $ada
 	$cmd3 = ""
 	$message = ""
 	If ($dhcp = "true") Then
-		$cmd3 = " dhcp"
+		$cmd3 = " source=dhcp"
 		$message = "Setting DHCP..."
 	Else
 		If $ip = "" Then
@@ -637,7 +637,7 @@ Func _apply($dhcp, $ip, $subnet, $gateway, $dnsDhcp, $dnsp, $dnsa, $dnsreg, $ada
 	$cmdReg = ""
 	If ($dnsDhcp = "true") Then
 		$cmd1 = $cmd1_1
-		$cmd3 = " dhcp"
+		$cmd3 = " source=dhcp"
 		$message = $oLangStrings.message.settingDnsDhcp
 		;_asyncNewCmd($cmd1&$cmd2&$cmd3, $message, 1)
 		;(cmd, callback, description)
@@ -702,7 +702,7 @@ EndFunc   ;==>_apply
 ;	$cmd3 = ""
 ;	$message = ""
 ;	if $dhcp Then
-;		$cmd3 = " dhcp"
+;		$cmd3 = " source=dhcp"
 ;		$message = "Setting DHCP..."
 ;	Else
 ;		$ip = _ctrlGetIP( $ip_Ip )
@@ -740,7 +740,7 @@ EndFunc   ;==>_apply
 ;	$cmdReg = ""
 ;	if $dnsDhcp Then
 ;		$cmd1 = $cmd1_1
-;		$cmd3 = " dhcp"
+;		$cmd3 = " source=dhcp"
 ;		$message = "Setting DNS DHCP..."
 ;		_asyncNewCmd($cmd1&$cmd2&$cmd3, $message, 1)
 ;	Else
